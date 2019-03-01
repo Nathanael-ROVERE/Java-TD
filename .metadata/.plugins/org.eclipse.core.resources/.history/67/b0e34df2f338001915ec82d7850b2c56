@@ -1,0 +1,28 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		// 2
+//		var book = new Book();
+//		System.out.println(book.title + ' ' + book.author);
+		
+		// 7
+//		Book livre = new Book ("1984", "George Orwell");
+//		System.out.println(livre.getTitle() + ' ' + livre.getAuthor());
+		
+		// 9
+//		Book livre2 = new Book ("Le seigneur des anneaux");
+//		System.out.println(livre2.getTitle() + ' ' + livre2.getAuthor());
+
+		// Exercice 2
+		// 1
+		var b1 = new Book("Da Java Code", "Duke Brown");
+	    var b2 = b1;
+	    var b3 = new Book("Da Java Code", "Duke Brown");
+
+	    System.out.println(b1 == b2);
+	    System.out.println(b1 == b3);
+	}
+
+}
+

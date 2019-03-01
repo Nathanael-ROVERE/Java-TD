@@ -1,0 +1,17 @@
+
+public class Book {
+	
+	// 1
+	private String title;
+	private String author;
+	
+	public static void main(String[] args) {
+		var book = new Book();
+	    System.out.println(book.title + ' ' + book.author);
+	}
+}
+
+
+// 2
+// affiche null null
+// normal étant donné que l'on a entré aucun titre/auteur

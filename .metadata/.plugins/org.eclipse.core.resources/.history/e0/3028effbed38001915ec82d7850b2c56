@@ -1,0 +1,25 @@
+
+public class Book {
+	
+	// 1
+	private String title;
+	private String author;
+	
+}
+
+
+// 2
+// affiche null null
+// normal étant donné que l'on a entré aucun titre/auteur
+
+// 3 
+// En déplaçant le main, on a une erreur car title et author sont privés
+// On peut faire des getters pour y accéder
+
+// 4
+// Les 4 visiblités sont : private < (rien) < protected < public
+// On déclare les champs privés pour ne pas les modifier au sein du main. On force l'utilisation d'accesseurs. 
+
+// 5
+// Un accesseur permet de connaître un champ, même privé, depuis une autre classe. 
+// Il affiche la valeur d'un champ sans la modifier.

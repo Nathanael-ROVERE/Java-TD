@@ -1,0 +1,13 @@
+package fr.umlv.morse;
+import java.lang.StringBuilder;
+
+public class Morse {
+
+	public static void main(String[] args) {
+		for (String item: args){
+			StringBuilder sb = new StringBuilder();
+			sb.append(item + " Stop.");
+			System.out.print(sb.toString());
+		}
+	}
+}

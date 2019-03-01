@@ -1,0 +1,13 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		// 7
+		Book livre = new Book ("1984", "George Orwell");
+		System.out.println(livre.getTitle() + ' ' + livre.getAuthor());
+
+	}
+
+}
+
