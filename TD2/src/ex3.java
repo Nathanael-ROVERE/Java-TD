@@ -1,0 +1,38 @@
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class ex3 {
+
+	public static void main(String[] args) {
+//		questionUne(args);
+		questionDeux(args);
+		
+		
+	}
+		
+	public static void questionUne(String[] args) {
+		Pattern p = Pattern.compile("[0-9]*");
+			
+		for (String i: args) {
+			Matcher m = p.matcher(i);
+			boolean b = m.matches();
+			if (b == true) {System.out.println(i);}
+			else {System.out.print("");}
+		}
+	}
+			
+	public static void questionDeux(String[] args) {
+		Pattern p = Pattern.compile("[a-z]*[0-9]+");
+				
+		for (String i: args) {
+			Matcher m = p.matcher(i);
+			boolean b = m.matches();
+			if (b == true) {System.out.print(i.replaceAll("[a-z]", ""));}
+			else {System.out.print("");}
+		}
+	}
+}
+
+//1
+//compile sert à donner un pattern pour les chaines de caractères que le fonction va recevoir
+//match sert à comparer des chaines de caractères à un regex pour voir 
