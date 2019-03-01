@@ -46,6 +46,11 @@ public class Book {
     	else return false;
     }
     
+    @Override
+    public String toString() {
+    	return this.title + " by " + this.author;
+    }
+    
 }
 
 // Exercice 1
@@ -94,6 +99,7 @@ public class Book {
 
 // 3
 // Renvoie l'index de la première occurence de l'élément recherché dans la liste. Renvoie -1 si la liste ne contient pas l'élément
+
 
 
 
