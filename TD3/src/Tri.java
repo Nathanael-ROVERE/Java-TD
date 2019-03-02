@@ -33,7 +33,7 @@ public class Tri {
 	}
 	
 	public static int indexOfMin(int[] tableau, int indexMin, int indexMax) {
-		int indexOfMin = 0;
+		int indexOfMin = indexMin;
 		int min = tableau[indexMin];
 		for (int i = indexMin; i < indexMax; i++) {
 			if (min > tableau[i]) {
