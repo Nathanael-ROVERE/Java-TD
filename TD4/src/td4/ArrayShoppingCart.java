@@ -1,15 +1,13 @@
-import TD3.Book;
+package td4;
 
 public class ArrayShoppingCart {
 
 	// PARAMETRES
 	private Book[] array;
 	private int quantite;	
-	final private int max;
+	private int max;
 	
-	//1
-	// Il n'est pas intéressant de stocker le nombre max de livres dans une variable statique car la valeur depend de chaque instance
-		
+	
 	// GETTER
 	public Book[] getArray() {
 		return array;
@@ -24,12 +22,45 @@ public class ArrayShoppingCart {
 	public ArrayShoppingCart(int max) {
 		super();
 		this.array = new Book[max];
-		this.quantite = 0;
 		this.max = max;
 	}
 
 	// METHODES
-	public void add(Book book) {
-		this.array[quantite++] = book;
+	public void add(Book book) throws Exception {
+		if ( quantite >= max ) {
+			throw new Exception ("Le nombre maximum de livres est atteint");
+		}
+		this.array[quantite] = book;
+		quantite++;
 	}
+	
+	@Override
+    public String toString() {
+    	StringBuilder sb = new StringBuilder();
+			sb.append("Quantite : " + quantite + " / " + max + " livres");
+		for (int i = 0; i < quantite; i++) {
+			sb.append("\n - " + array[i].toString());
+		}
+		return new String(sb);
+	}
+    
+    public void printContent() {
+    	System.out.println(toString());
+    }
+    
+    public Book longestTitle() {
+    	int tmp = -1;
+    	for (int i = 0; i < quantite; i++) {    		
+    		if (tmp == -1 || array[tmp].getTitle().length() <= array[i].getTitle().length()) {
+    			tmp = i;
+    		}
+    	}
+    	
+    	if (tmp == -1) {
+    		return null;
+    	}
+    	
+    	return array[tmp];
+    	
+    }
 }

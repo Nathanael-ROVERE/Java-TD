@@ -1,3 +1,4 @@
+package td3;
 
 public class Tri {
 
