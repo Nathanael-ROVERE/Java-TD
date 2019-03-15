@@ -38,20 +38,25 @@ public class Robot {
 
 	
 	// METHODES
+	
+	protected boolean rollDice() {
+		return true;
+	}
+	
 	public void fire(Robot targetRobot) {
 		if (targetRobot.isDead()) {
 			throw new IllegalArgumentException(this + " a voulu tirer sur un mort");
 		}
 		targetRobot.life -= FIRE;
-		System.out.println("Robot " + targetRobot.getName() + " a été touché par " + name);
+		System.out.println(targetRobot + " a été touché par " + name);
+		System.out.println(targetRobot + " a " + targetRobot.getLife() + " points de vie");
 	}
 	
 	public boolean isDead() {
 		if (life <= 0) {
-			System.out.println("Le robot " + name +" est mort");
+			System.out.println(this +" est mort");
 			return true;}
 		else {
-			System.out.println("Le robot " + name + " est vivant, il a " + life + " points de vie");
 			return false;}
 	}
 	
@@ -70,9 +75,7 @@ public class Robot {
 		
 		var target = new Robot("target");
 		target.setLife(2);
-		System.out.println("Vie avant tir " + target.getLife());
 		bob.fire(target);
-		System.out.println("Vie après tir " + target.getLife());
 		bob.isDead();
 		target.isDead();
 
