@@ -6,6 +6,7 @@ public class MAIN {
         var apple1 = new Apple(20, AppleKind.Golden);
         var apple2 = new Apple(40, AppleKind.PinkLady);
         var pear = new Pear(5);
+        System.out.println(apple2 + "\n");
    
         var basket = new Basket();
         basket.add(apple1, 5);

@@ -1,3 +1,8 @@
+import java.util.Objects;
+
+enum AppleKind {
+    Golden, PinkLady, GrannySmith;
+ }
 
 public class Apple extends Fruit {
 	
@@ -5,20 +10,35 @@ public class Apple extends Fruit {
 	private int poids;
 	private AppleKind type;
 	
+
+	
 	// CONSTRUCTOR
 	public Apple(int poids, AppleKind type) {
 		this.poids = poids;
 		this.type = type;
+		this.setQuantite(1);
+	}
+		
+//	 METHODES
+	private String getName() {
+		String name = null;
+		switch (type) {
+		case Golden:
+			name = "Golden";
+			break;
+		case PinkLady:
+			name = "Pink Lady";
+			break;
+		case GrannySmith:
+			name = "Granny Smith";
+			break;
+		}
+		return name;
 	}
 	
-    enum AppleKind {
-        Golden, PinkLady, GrannySmith;
-     }
-	
-	// METHODES
 	@Override
 	public String toString() {
-		return (this.type + " " + this.poids + " g");
+		return (getName() + " " + this.poids + " g");
 	}
 	
 	@Override
